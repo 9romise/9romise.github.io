@@ -1,0 +1,41 @@
+{
+  "name": "9romise.github.io",
+  "type": "module",
+  "packageManager": "pnpm@9.4.0",
+  "description": "",
+  "author": "Vida Xie<https://github.com/9romise>",
+  "license": "MIT",
+  "homepage": "https://github.com/9romise/9romise.github.io#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9romise/9romise.github.io.git"
+  },
+  "scripts": {
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "prepare": "nuxi prepare && npx simple-git-hooks",
+    "prepack": "pnpm build",
+    "lint": "nuxi prepare && eslint .",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.3.13",
+    "@unocss/eslint-config": "^0.61.0",
+    "@unocss/nuxt": "^0.61.0",
+    "@vida0905/eslint-config": "^0.3.0",
+    "@vueuse/nuxt": "^10.11.0",
+    "eslint": "^9.5.0",
+    "lint-staged": "^15.2.7",
+    "nuxt": "^3.12.2",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.5.2",
+    "unocss": "^0.61.0",
+    "vue-tsc": "^2.0.22"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
