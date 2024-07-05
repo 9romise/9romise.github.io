@@ -5,7 +5,7 @@ const links = {
 </script>
 
 <template>
-  <footer class="mx-auto max-w-205 w-85% md:w-65% xl:w-60% dark:c-gray-500">
+  <footer>
     <div class="flex flex-col justify-between b-b b-gray-200 b-solid pb-12 md:flex-row dark:b-gray-800">
       <div class="flex flex-col">
         <Logo class="mb-5 text-8" />

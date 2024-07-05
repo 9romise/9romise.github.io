@@ -7,11 +7,19 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="layout">
     <AppHeader />
-    <slot />
-    <AppFooter />
+    <main class="mx-auto mb-20 mt-10 max-w-205 w-85% flex-1 lg:w-60% md:w-65%">
+      <slot />
+    </main>
+    <AppFooter class="mx-auto max-w-205 w-85% lg:w-60% md:w-65% dark:c-gray-500" />
   </div>
 </template>
 
-<style></style>
+<style>
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+</style>
