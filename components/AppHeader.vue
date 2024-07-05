@@ -14,10 +14,10 @@ const navItems = [
     title: 'Blog',
     to: '/blogs',
   },
-  {
-    title: 'Notes',
-    to: '/notes',
-  },
+  // {
+  //   title: 'Notes',
+  //   to: '/notes',
+  // },
 ]
 
 function backTop() {
