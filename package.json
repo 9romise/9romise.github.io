@@ -12,11 +12,14 @@
   },
   "scripts": {
     "build": "nuxi build",
-    "dev": "nuxi dev",
+    "dev": "nuxi dev --host",
     "prepare": "nuxi prepare && npx simple-git-hooks",
     "prepack": "pnpm build",
     "lint": "nuxi prepare && eslint .",
     "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.11"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.1.21",
@@ -29,6 +32,7 @@
     "eslint": "^9.6.0",
     "lint-staged": "^15.2.7",
     "nuxt": "^3.12.3",
+    "sass": "^1.77.6",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.3",
     "unocss": "^0.61.0",

@@ -9,7 +9,7 @@ useHead({
 <template>
   <div class="layout">
     <AppHeader />
-    <main class="mx-auto mb-20 mt-10 max-w-205 w-85% flex-1 lg:w-60% md:w-65%">
+    <main class="mx-auto my-10 max-w-205 w-85% flex-1 lg:my-30 lg:w-60% md:w-65%">
       <slot />
     </main>
     <AppFooter class="mx-auto max-w-205 w-85% lg:w-60% md:w-65% dark:c-gray-500" />

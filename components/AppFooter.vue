@@ -10,9 +10,9 @@ const links = {
       <div class="flex flex-col">
         <Logo class="mb-5 text-8" />
         <p class="text-4.5">
-          This theme is designed by
+          Some of the designs are referenced to
           <a
-            class="c-gray-900 decoration-underline dark:c-gray-300"
+            class="c-gray-900 underline dark:c-gray-300"
             href="https://github.com/nrk9819"
             target="_blank"
           >nrk9819</a>.
@@ -22,22 +22,22 @@ const links = {
         <NuxtLink
           v-for="(link, key) in links"
           :key
-          class="text-3.5 hover:decoration-underline"
+          class="text-3.5 hover:underline"
           :to="link"
           target="_blank"
         >
-          {{ key }}<span class="i-solar:arrow-right-up-bold ml-1" />
+          {{ key }}<span class="i-ri:arrow-right-up-line ml-1" />
         </NuxtLink>
       </div>
     </div>
-    <div>
-      <div>@ 2024 Vida</div>
+    <div class="op-70">
+      <a class="underline" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 2024-PRESENT © Vida Xie
     </div>
   </footer>
 </template>
 
 <style scoped>
 footer > div {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 </style>

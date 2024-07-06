@@ -1,0 +1,76 @@
+@font-face {
+  font-family: Source Han Sans CN;
+  src: url('/fonts/SourceHanSansCN-VF.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --c-scrollbar: #fff;
+  --c-scrollbar-thumb: #fff;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: Source Han Sans CN;
+}
+
+* {
+  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: var(--c-scrollbar);
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: var(--c-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar-thumb);
+}
+
+a {
+  @apply: transition;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  margin-top: 1.75em;
+  font-size: 2rem;
+}
+h3 {
+  margin-top: 1.5em;
+  font-size: 1.75rem;
+}
+h4 {
+  margin-top: 1.5em;
+  font-size: 1.5rem;
+}
+article {
+  h1, h2, h3, h4 {
+    @apply: text-gray-900;
+  }
+  ol, ul {
+    list-style-type: initial;
+    list-style-position: inside;
+  }
+  p {
+    @apply: my-3 text-gray-700;
+    a {
+      @apply: underline decoration-gray-700 underline-op-30;
+      &:hover {
+        @apply: underline-op-100;
+      }
+    }
+  }
+}

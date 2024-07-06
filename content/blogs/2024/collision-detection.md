@@ -1,8 +1,14 @@
-# 四叉树
+---
+title: '四叉树与碰撞检测'
+draft: true
+time: 2024-07-06
+---
+
+## 四叉树
 
 https://www.mikechambers.com/blog/2011/03/21/javascript-quadtree-implementation/
 
-# 碰撞检测
+## 碰撞检测
 
 碰撞检测算法在实际应用中，一般可分为两步：
 
@@ -11,9 +17,9 @@ https://www.mikechambers.com/blog/2011/03/21/javascript-quadtree-implementation/
 
 粗略碰撞检测用来将明显不相交的两个物体快速排除，精细碰撞检测则用来准确判断两个物体是否相交。
 
-## 粗略碰撞检测
+### 粗略碰撞检测
 
-### 包围形法
+#### 包围形法
 
 https://zhuanlan.zhihu.com/p/508757803
 
@@ -46,9 +52,9 @@ OBB 与 AABB 的差别在于物体旋转之后，AABB 的大小会发生改变�
 
 OBB 相比 AABB 更接近物体本身的形状，其用到的碰撞检测的算法也要比 AABB 复杂，如分离轴定理（Separating Axis Theorem，SAT）、GJK（Gilbert–Johnson–Keerthi）算法，接下来在精细碰撞检测部分会有详细介绍。
 
-## 精细碰撞检测
+### 精细碰撞检测
 
-### 分离轴定理（SAT）
+#### 分离轴定理（SAT）
 
 https://zhuanlan.zhihu.com/p/508874496
 
@@ -56,7 +62,7 @@ https://zhuanlan.zhihu.com/p/508874496
 
 **投影**
 
-### GJK
+#### GJK
 
 闵可夫斯基差
 

@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="logo leading-none">
+  <span class="logo leading-none">
     vida
-  </div>
+  </span>
 </template>
 
 <style>

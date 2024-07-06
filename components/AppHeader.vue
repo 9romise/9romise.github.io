@@ -7,10 +7,6 @@ const toggleDark = useToggle(isDark)
 
 const navItems = [
   {
-    title: 'About',
-    to: '/about',
-  },
-  {
     title: 'Blog',
     to: '/blogs',
   },
@@ -32,15 +28,15 @@ function backTop() {
 <template>
   <header class="w-full px-8">
     <nav class="h-10 flex items-end justify-between lh-none sm:h-17">
-      <div class="text-4 c-gray-500 sm:text-10 dark:c-gray-300">
-        <NuxtLink to="/">
-          <Logo class="transition hover:c-black" />
-        </NuxtLink>
-      </div>
+      <NuxtLink class="text-10 c-gray-500 dark:c-gray-300 hover:c-black" to="/">
+        <Logo />
+      </NuxtLink>
       <div class="flex items-center gap-3 text-4 md:gap-5">
         <NuxtLink
           v-for="({ title, to }) in navItems"
           :key="title"
+          class="hover:underline"
+          active-class="op-100 underline"
           :title
           :to
         >
@@ -49,26 +45,26 @@ function backTop() {
         <a title="Github" href="https://github.com/9romise" target="_blank">
           <span class="i-ri-github-line" />
         </a>
-        <a title="Toggle Color Theme">
+        <a title="Toggle Color Theme" class="cursor-pointer">
           <span class="i-ri-sun-line dark:i-ri-moon-line" @click="toggleDark()" />
         </a>
       </div>
     </nav>
     <button
       title="scroll to top"
-      class="fixed bottom-12 right-6 h-8 w-8 rounded-50% op-70 transition md:right-18 hover:bg-gray-300 hover:dark:bg-gray-600"
+      class="fixed bottom-12 right-6 h-10 w-10 rounded-50% op-70 transition md:right-18 hover:bg-gray-200 hover:dark:bg-gray-600"
       @click="backTop"
     >
-      <span class="i-solar:arrow-up-bold" />
+      <span class="i-ri:arrow-up-fill" />
     </button>
   </header>
 </template>
 
-<style>
-nav a {
-  @apply opacity-60 transition cursor-pointer;
-}
-.router-link-active {
-  @apply: opacity-100;
+<style scoped lang="scss">
+a {
+  @apply: op-60;
+  &:hover {
+    @apply: op-100;
+  }
 }
 </style>
