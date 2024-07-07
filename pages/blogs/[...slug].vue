@@ -11,7 +11,7 @@ import dayjs from 'dayjs'
       <p class="mt--6 text-gray-500">
         {{ `${dayjs(doc.time).format('MMM DD, YYYY ddd')}.` }}
       </p>
-      <ContentRenderer :value="doc" />
+      <ContentRenderer class="text-gray-600" :value="doc" />
     </article>
   </ContentDoc>
 </template>

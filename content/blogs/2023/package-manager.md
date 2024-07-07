@@ -313,10 +313,7 @@ function onList() {
       const item = allRegistries[key]
 
       /** 修改此处代码：将&&改为|| */
-      const prefix = item[FIELD_IS_CURRENT]
-        || equalsIgnoreCase(item.registry, cur)
-        ? '* '
-        : '  '
+      const prefix = item[FIELD_IS_CURRENT] || equalsIgnoreCase(item.registry, cur) ? '* ' : '  '
       /** 修改此处代码 */
 
       info.push(prefix + key + line(key, len) + item.registry)

@@ -6,7 +6,7 @@ const links = {
 
 <template>
   <footer>
-    <div class="flex flex-col justify-between b-b b-gray-200 b-solid pb-6 md:flex-row dark:b-gray-800">
+    <div class="flex flex-col justify-between gap-8 b-b b-gray-200 b-solid pb-6 md:flex-row dark:b-gray-800">
       <div class="flex flex-col">
         <Logo class="text-8" />
       </div>

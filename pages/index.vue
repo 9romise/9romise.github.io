@@ -84,7 +84,7 @@ const info = [
       },
     ],
   },
-] as const
+]
 
 function codeClick(link: string | undefined) {
   if (link) {
@@ -109,6 +109,7 @@ function codeClick(link: string | undefined) {
         <code
           v-for="{ icon, name, link } in details"
           :key="name"
+          class="whitespace-nowrap"
           :class="[
             { 'cursor-pointer': link },
           ]"

@@ -7,8 +7,9 @@
 }
 
 :root {
-  --c-scrollbar: #fff;
-  --c-scrollbar-thumb: #fff;
+  --c-bg: #fff;
+  --c-scrollbar: #eee;
+  --c-scrollbar-thumb: #bbb;
 }
 
 html {
@@ -70,9 +71,12 @@ ol,
 ul {
   list-style-type: initial;
   list-style-position: inside;
+  li::marker {
+    @apply: text-gray-500 ml-1;
+  }
 }
 p {
-  @apply: my-1em text-gray-500;
+  @apply: my-1em;
   a {
     @apply: underline decoration-gray-700 underline-op-30;
     &:hover {
@@ -81,14 +85,14 @@ p {
   }
 }
 blockquote {
-  @apply: italic ml--1.25em my-2em pl-0.8em overflow-hidden b-l-0.25em b-gray-300;
+  @apply: italic ml--1.25em my-2em py-0.5em pl-0.8em overflow-hidden b-l-0.25em b-gray-300;
   p {
-    @apply: c-gray-400;
+    @apply: c-gray-400 m-0;
   }
 }
 pre {
-  @apply: px-0.8em py-1em rounded-2;
+  @apply: px-0.8em py-1em rounded-2 overflow-x-auto;
 }
 :not(pre) > code {
-  @apply: mx-0.1em px-0.4em py-0.2em bg-gray-100 rounded-1;
+  @apply: mx-0.2em px-0.2em py-0.1em bg-gray-100 rounded-1;
 }
