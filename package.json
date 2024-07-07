@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.1.21",
+    "@iconify-json/vscode-icons": "^1.1.35",
     "@nuxt/content": "^2.13.1",
     "@nuxt/eslint": "^0.3.13",
     "@unocss/eslint-config": "^0.61.3",

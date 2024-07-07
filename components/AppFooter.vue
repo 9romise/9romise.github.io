@@ -8,8 +8,7 @@ const links = {
   <footer>
     <div class="flex flex-col justify-between b-b b-gray-200 b-solid pb-6 md:flex-row dark:b-gray-800">
       <div class="flex flex-col">
-        <Logo class="mb-5 text-8" />
-        <p class="text-4.5" />
+        <Logo class="text-8" />
       </div>
       <div class="flex flex-col">
         <NuxtLink
@@ -23,7 +22,7 @@ const links = {
         </NuxtLink>
       </div>
     </div>
-    <div class="op-70">
+    <div class="op-50">
       <a class="underline" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 2024-PRESENT © Vida Xie
     </div>
   </footer>

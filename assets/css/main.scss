@@ -41,12 +41,6 @@ a {
   @apply: transition;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-weight: bold;
-}
 h1 {
   font-size: 2.5em;
   margin-bottom: 1em;
@@ -66,37 +60,35 @@ h4 {
   font-size: 1.5em;
   margin-bottom: 0.25em;
 }
-article {
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply: text-gray-900;
+h1,
+h2,
+h3,
+h4 {
+  @apply: font-bold text-gray-700;
+}
+ol,
+ul {
+  list-style-type: initial;
+  list-style-position: inside;
+}
+p {
+  @apply: my-1em text-gray-500;
+  a {
+    @apply: underline decoration-gray-700 underline-op-30;
+    &:hover {
+      @apply: underline-op-100;
+    }
   }
-  ol,
-  ul {
-    list-style-type: initial;
-    list-style-position: inside;
-  }
+}
+blockquote {
+  @apply: italic ml--1.25em my-2em pl-0.8em overflow-hidden b-l-0.25em b-gray-300;
   p {
-    @apply: my-3 text-gray-700;
-    a {
-      @apply: underline decoration-gray-700 underline-op-30;
-      &:hover {
-        @apply: underline-op-100;
-      }
-    }
+    @apply: c-gray-400;
   }
-  blockquote {
-    @apply: italic ml--1.25em my-2em pl-0.8em overflow-hidden b-l-0.25em b-gray-300;
-    p {
-      @apply: c-gray-400;
-    }
-  }
-  pre {
-    @apply: px-0.8em py-1em rounded-2;
-  }
-  :not(pre) > code {
-    @apply: mx-0.1em px-0.25em bg-gray-100 rounded-1;
-  }
+}
+pre {
+  @apply: px-0.8em py-1em rounded-2;
+}
+:not(pre) > code {
+  @apply: mx-0.1em px-0.4em py-0.2em bg-gray-100 rounded-1;
 }
