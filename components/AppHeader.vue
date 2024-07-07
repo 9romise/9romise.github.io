@@ -28,14 +28,14 @@ function backTop() {
 <template>
   <header class="w-full px-8">
     <nav class="h-10 flex items-end justify-between lh-none sm:h-17">
-      <NuxtLink class="text-10 c-gray-500 dark:c-gray-300 hover:c-black" to="/">
+      <NuxtLink class="text-10 c-gray-700 dark:c-gray-300" to="/">
         <Logo />
       </NuxtLink>
       <div class="flex items-center gap-3 text-4 md:gap-5">
         <NuxtLink
           v-for="({ title, to }) in navItems"
           :key="title"
-          class="hover:underline"
+          class="op-60 hover:underline hover:op-100"
           active-class="op-100 underline"
           :title
           :to
@@ -45,9 +45,9 @@ function backTop() {
         <a title="Github" href="https://github.com/9romise" target="_blank">
           <span class="i-ri-github-line" />
         </a>
-        <a title="Toggle Color Theme" class="cursor-pointer">
+        <button title="Toggle Color Theme">
           <span class="i-ri-sun-line dark:i-ri-moon-line" @click="toggleDark()" />
-        </a>
+        </button>
       </div>
     </nav>
     <button
@@ -59,12 +59,3 @@ function backTop() {
     </button>
   </header>
 </template>
-
-<style scoped lang="scss">
-a {
-  @apply: op-60;
-  &:hover {
-    @apply: op-100;
-  }
-}
-</style>

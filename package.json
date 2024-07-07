@@ -15,27 +15,30 @@
     "dev": "nuxi dev --host",
     "prepare": "nuxi prepare && npx simple-git-hooks",
     "prepack": "pnpm build",
-    "lint": "nuxi prepare && eslint .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "dayjs": "^1.11.11"
+    "dayjs": "^1.11.11",
+    "shiki": "^1.10.2"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.1.21",
-    "@nuxt/content": "^2.13.0",
+    "@nuxt/content": "^2.13.1",
     "@nuxt/eslint": "^0.3.13",
-    "@unocss/eslint-config": "^0.61.0",
-    "@unocss/nuxt": "^0.61.0",
+    "@unocss/eslint-config": "^0.61.3",
+    "@unocss/nuxt": "^0.61.3",
     "@vida0905/eslint-config": "^0.3.0",
     "@vueuse/nuxt": "^10.11.0",
     "eslint": "^9.6.0",
+    "eslint-plugin-format": "^0.1.2",
     "lint-staged": "^15.2.7",
     "nuxt": "^3.12.3",
     "sass": "^1.77.6",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.5.3",
-    "unocss": "^0.61.0",
+    "unocss": "^0.61.3",
     "vue-tsc": "^2.0.26"
   },
   "simple-git-hooks": {

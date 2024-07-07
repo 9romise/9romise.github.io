@@ -6,17 +6,10 @@ const links = {
 
 <template>
   <footer>
-    <div class="flex flex-col justify-between b-b b-gray-200 b-solid pb-12 md:flex-row dark:b-gray-800">
+    <div class="flex flex-col justify-between b-b b-gray-200 b-solid pb-6 md:flex-row dark:b-gray-800">
       <div class="flex flex-col">
         <Logo class="mb-5 text-8" />
-        <p class="text-4.5">
-          Some of the designs are referenced to
-          <a
-            class="c-gray-900 underline dark:c-gray-300"
-            href="https://github.com/nrk9819"
-            target="_blank"
-          >nrk9819</a>.
-        </p>
+        <p class="text-4.5" />
       </div>
       <div class="flex flex-col">
         <NuxtLink

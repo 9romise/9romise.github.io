@@ -6,5 +6,6 @@ export default nuxt()
   .prepend(
     vida({
       unocss: true,
+      formatters: true,
     }),
   )

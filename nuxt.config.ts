@@ -1,12 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/eslint', '@nuxt/content'],
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/content',
+  ],
   css: ['@unocss/reset/tailwind.css', '~/assets/css/main.scss'],
   vue: {
     propsDestructure: true,
   },
-
+  content: {
+    highlight: {
+      theme: {
+        default: 'vitesse-light',
+        dark: 'vitesse-dark',
+      },
+    },
+  },
   eslint: {
     config: {
       standalone: false,

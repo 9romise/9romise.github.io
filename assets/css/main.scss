@@ -15,10 +15,14 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   font-family: Source Han Sans CN;
+  &:not(.dark) article pre {
+    @apply: bg-gray-100;
+  }
 }
 
 * {
   scrollbar-color: var(--c-scrollbar) var(--c-bg);
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -37,30 +41,40 @@ a {
   @apply: transition;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: bold;
-  margin-bottom: 1em;
 }
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
+  margin-bottom: 1em;
 }
 h2 {
-  margin-top: 1.75em;
-  font-size: 2rem;
+  margin-top: 1.5em;
+  font-size: 2em;
+  margin-bottom: 0.75em;
 }
 h3 {
-  margin-top: 1.5em;
-  font-size: 1.75rem;
+  margin-top: 1.25em;
+  font-size: 1.75em;
+  margin-bottom: 0.5em;
 }
 h4 {
-  margin-top: 1.5em;
-  font-size: 1.5rem;
+  margin-top: 1em;
+  font-size: 1.5em;
+  margin-bottom: 0.25em;
 }
 article {
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply: text-gray-900;
   }
-  ol, ul {
+  ol,
+  ul {
     list-style-type: initial;
     list-style-position: inside;
   }
@@ -72,5 +86,17 @@ article {
         @apply: underline-op-100;
       }
     }
+  }
+  blockquote {
+    @apply: italic ml--1.25em my-2em pl-0.8em overflow-hidden b-l-0.25em b-gray-300;
+    p {
+      @apply: c-gray-400;
+    }
+  }
+  pre {
+    @apply: px-0.8em py-1em rounded-2;
+  }
+  :not(pre) > code {
+    @apply: mx-0.1em px-0.25em bg-gray-100 rounded-1;
   }
 }

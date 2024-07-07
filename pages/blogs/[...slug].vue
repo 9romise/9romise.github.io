@@ -9,7 +9,7 @@ import dayjs from 'dayjs'
         {{ doc.title }}
       </h1>
       <p class="mt--6 text-gray-500">
-        {{ `${dayjs(doc.time).format('MM/DD/YYYY ddd')}.` }}
+        {{ `${dayjs(doc.time).format('MMM DD, YYYY ddd')}.` }}
       </p>
       <ContentRenderer :value="doc" />
     </article>
