@@ -91,7 +91,10 @@ blockquote {
   }
 }
 pre {
-  @apply: px-0.8em py-1em rounded-2 overflow-x-auto;
+  @apply: px-0.8em py-1em rounded-2 overflow-auto;
+  code .line {
+    display: unset !important;
+  }
 }
 :not(pre) > code {
   @apply: mx-0.2em px-0.2em py-0.1em bg-gray-100 rounded-1;

@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.11",
-    "shiki": "^1.10.2"
+    "shiki": "^1.10.3"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.1.21",
