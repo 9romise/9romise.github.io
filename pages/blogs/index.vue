@@ -6,7 +6,7 @@ useHead({
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
 const blogList = navigation.value!
   .find(({ title }) => title === 'Blogs')!
-  .children.sort((a, b) => Number(b.title) - Number(a.title))
+  .children!.sort((a, b) => Number(b.title) - Number(a.title))
 </script>
 
 <template>

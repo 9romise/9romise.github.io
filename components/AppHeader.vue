@@ -50,12 +50,18 @@ function backTop() {
         </button>
       </div>
     </nav>
-    <button
+    <FloatButton
       title="scroll to top"
-      class="fixed bottom-12 right-6 h-10 w-10 rounded-50% op-70 transition md:right-18 hover:bg-gray-200 hover:dark:bg-gray-600"
-      @click="backTop"
+      class="bottom-12 right-6"
+      :visibility-height="400"
     >
-      <span class="i-ri:arrow-up-fill" />
-    </button>
+      <button
+        title="scroll to top"
+        class="h-10 w-10 rounded-50% op-70 transition md:right-18 hover:bg-gray-200 hover:dark:bg-gray-600"
+        @click="backTop"
+      >
+        <span class="i-ri:arrow-up-fill" />
+      </button>
+    </FloatButton>
   </header>
 </template>
