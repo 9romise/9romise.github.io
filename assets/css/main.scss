@@ -19,6 +19,11 @@ html {
   &:not(.dark) article pre {
     @apply: bg-gray-100;
   }
+  &.dark {
+    --c-bg: #050505;
+    --c-scrollbar: #111;
+    --c-scrollbar-hover: #222;
+  }
 }
 
 * {
@@ -98,4 +103,21 @@ pre {
 }
 :not(pre) > code {
   @apply: mx-0.2em px-0.2em py-0.1em bg-gray-100 rounded-1;
+}
+
+.dark {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply: text-gray-100;
+  }
+  blockquote {
+    p {
+      @apply: c-gray-200;
+    }
+  }
+  :not(pre) > code {
+    @apply: bg-gray-800;
+  }
 }
