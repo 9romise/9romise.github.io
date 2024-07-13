@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { useDark, useToggle } from '@vueuse/core'
 import Logo from './Logo.vue'
 
-const isDark = useDark()
-const toggleDark = useToggle(isDark)
+const { toggleDark } = useTheme()
 
 const navItems = [
   {
@@ -46,7 +44,7 @@ function backTop() {
           <span class="i-ri-github-line" />
         </a>
         <button title="Toggle Color Theme">
-          <span class="i-ri-sun-line dark:i-ri-moon-line" @click="toggleDark()" />
+          <span class="i-ri-sun-line dark:i-ri-moon-line" @click="toggleDark" />
         </button>
       </div>
     </nav>
