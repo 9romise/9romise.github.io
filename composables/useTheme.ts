@@ -20,8 +20,7 @@ export const useTheme = createGlobalState(() => {
       Math.max(x, innerWidth - x),
       Math.max(y, innerHeight - y),
     )
-    // @ts-expect-error: Transition API
-    const transition = document.startViewTransition(async () => {
+    const transition = document.startViewTransition!(async () => {
       isDark.value = !isDark.value
       await nextTick()
     })
@@ -38,7 +37,7 @@ export const useTheme = createGlobalState(() => {
               : clipPath,
           },
           {
-            duration: 600,
+            duration: 300,
             easing: 'ease-out',
             pseudoElement: isDark.value
               ? '::view-transition-old(root)'

@@ -15,16 +15,49 @@
 html {
   overflow-x: hidden;
   overflow-y: scroll;
+  background: var(--c-bg);
   font-family: Source Han Sans CN;
-  &:not(.dark) article pre {
-    @apply: bg-gray-100;
-  }
   &.dark {
     --c-bg: #050505;
     --c-scrollbar: #111;
     --c-scrollbar-hover: #222;
   }
+  &:not(.dark) article pre {
+    @apply: bg-gray-100;
+  }
 }
+
+body {
+  @apply: c-gray-700 dark:c-gray-400 transition font-medium;
+}
+
+body::before {
+  --line: color-mix(in lch, canvasText, transparent 70%);
+  --size: 45px;
+  content: '';
+  @apply: fixed inset-0 w-full h-full;
+  background: linear-gradient(90deg, var(--line));
+}
+
+// #region toggle dark theme
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+// #endregion
 
 * {
   scrollbar-color: var(--c-scrollbar) var(--c-bg);
