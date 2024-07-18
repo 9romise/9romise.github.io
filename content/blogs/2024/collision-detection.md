@@ -1,6 +1,7 @@
 ---
 title: '四叉树与碰撞检测'
 draft: true
+navigation: false
 time: 2024-07-06
 ---
 
