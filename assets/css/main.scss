@@ -42,7 +42,7 @@ body::before {
       50% / var(--size) var(--size),
     linear-gradient(var(--c-line) 1px, transparent 1px var(--size)) 50% 50% /
       var(--size) var(--size);
-  mask: linear-gradient(30deg, transparent 10%, var(--c-bg));
+  mask: radial-gradient(ellipse at 25% 75%, transparent 15%, var(--c-bg) 100%);
   pointer-events: none;
   z-index: -1;
 }

@@ -26,7 +26,6 @@ const info = [
       {
         name: 'Vue',
         icon: 'i-vscode-icons:file-type-vue',
-        link: 'https://vuejs.org/',
       },
       {
         name: 'Node.js',
