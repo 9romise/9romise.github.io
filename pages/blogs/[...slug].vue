@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 <template>
   <ContentDoc v-slot="{ doc }">
     <article class="px-0 lg:px-20">
-      <h1 class="text-gray-900 dark:text-gray-100">
+      <h1 class="mb-4 mt-0 text-10 text-gray-900 dark:text-gray-100">
         {{ doc.title }}
       </h1>
       <p class="mt--6 text-gray-500 dark:c-gray-400">

@@ -89,23 +89,16 @@ a {
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 1em;
+  @apply: text-8 mt-6 mb-3;
 }
 h2 {
-  margin-top: 1.5em;
-  font-size: 2em;
-  margin-bottom: 0.75em;
+  @apply: text-7 mt-5 mb-2;
 }
 h3 {
-  margin-top: 1.25em;
-  font-size: 1.75em;
-  margin-bottom: 0.5em;
+  @apply: text-6 mt-4 mb-1;
 }
 h4 {
-  margin-top: 1em;
-  font-size: 1.5em;
-  margin-bottom: 0.25em;
+  @apply: text-5 mt-3 mb-1;
 }
 h1,
 h2,
