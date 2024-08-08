@@ -27,7 +27,7 @@ function backTop() {
   <header class="w-full px-8">
     <nav class="h-14 flex items-end justify-between lh-none sm:h-17">
       <NuxtLink class="text-10 c-gray-700 dark:c-gray-300" to="/">
-        <Logo />
+        <Logo animate />
       </NuxtLink>
       <div class="flex items-center gap-3 text-4 md:gap-5">
         <NuxtLink
