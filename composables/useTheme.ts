@@ -6,7 +6,7 @@ export const useTheme = createGlobalState(() => {
    * @see https://github.com/vuejs/vitepress/pull/2347
    */
   function toggleDark(event: MouseEvent) {
-    const isAppearanceTransition = document.startViewTransition
+    const isAppearanceTransition = ('startViewTransition' in document)
       && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     if (!isAppearanceTransition) {
