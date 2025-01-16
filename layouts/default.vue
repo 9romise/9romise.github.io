@@ -1,9 +1,3 @@
-<script setup lang="ts">
-useHead({
-  title: 'Vida Xie',
-})
-</script>
-
 <template>
   <div class="layout">
     <AppHeader />

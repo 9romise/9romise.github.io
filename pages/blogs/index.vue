@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Blogs - Vida Xie',
+  title: 'Blogs',
 })
 
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())

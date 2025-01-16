@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Vida Xie',
+  title: 'About',
 })
 
 const info = [
