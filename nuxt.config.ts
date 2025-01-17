@@ -13,9 +13,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
   ],
   css: ['@unocss/reset/tailwind.css', '~/assets/css/main.scss'],
-  vue: {
-    propsDestructure: true,
-  },
   content: {
     highlight: {
       theme: {

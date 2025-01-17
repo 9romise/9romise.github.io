@@ -6,7 +6,7 @@ const { toggleDark } = useTheme()
 const navItems = [
   {
     title: 'Blog',
-    to: '/blogs',
+    to: '/blog',
   },
   // {
   //   title: 'Notes',
