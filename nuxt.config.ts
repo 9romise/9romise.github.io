@@ -14,10 +14,14 @@ export default defineNuxtConfig({
   ],
   css: ['@unocss/reset/tailwind.css', '~/assets/css/main.scss'],
   content: {
-    highlight: {
-      theme: {
-        default: 'vitesse-light',
-        dark: 'vitesse-dark',
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'vitesse-light',
+            dark: 'vitesse-dark',
+          },
+        },
       },
     },
   },
