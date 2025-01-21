@@ -24,9 +24,6 @@ html {
     --c-scrollbar-hover: #222;
     --c-line: #ffffff20;
   }
-  &:not(.dark) article pre {
-    @apply: bg-gray-100;
-  }
 }
 
 body {
@@ -125,12 +122,6 @@ blockquote {
   @apply: italic ml--1.25em my-2em py-0.5em pl-0.8em overflow-hidden b-l-0.25em b-gray-300;
   p {
     @apply: c-gray-400 m-0;
-  }
-}
-pre {
-  @apply: px-0.8em py-1em rounded-2 overflow-auto;
-  code .line {
-    display: unset !important;
   }
 }
 :not(pre) > code {
