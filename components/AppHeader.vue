@@ -14,6 +14,19 @@ const navItems = [
   // },
 ]
 
+const links = [
+  {
+    title: 'Github',
+    href: 'https://github.com/9romise',
+    icon: 'i-ri:github-line',
+  },
+  {
+    title: 'Bluesky',
+    href: 'https://bsky.app/profile/9romise.bsky.social',
+    icon: 'i-ri:bluesky-line',
+  },
+]
+
 function backTop() {
   scrollTo({
     left: 0,
@@ -40,8 +53,8 @@ function backTop() {
         >
           {{ title }}
         </NuxtLink>
-        <a title="Github" href="https://github.com/9romise" target="_blank">
-          <span class="i-ri-github-line" />
+        <a v-for="{ title, href, icon } in links" :key="title" :title :href target="_blank">
+          <span :class="icon" />
         </a>
         <button title="Toggle Color Theme">
           <span class="i-ri-sun-line dark:i-ri-moon-line" @click="toggleDark" />
