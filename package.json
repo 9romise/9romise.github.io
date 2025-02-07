@@ -20,25 +20,25 @@
   },
   "dependencies": {
     "dayjs": "^1.11.13",
-    "shiki": "^2.0.3"
+    "shiki": "^2.3.2"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.2.5",
-    "@iconify-json/vscode-icons": "^1.2.10",
-    "@nuxt/content": "^3.0.0",
-    "@nuxt/eslint": "^0.7.5",
-    "@unocss/eslint-config": "^65.4.2",
-    "@unocss/nuxt": "^65.4.2",
-    "@vida0905/eslint-config": "^1.2.1",
-    "@vueuse/nuxt": "^12.4.0",
-    "eslint": "^9.18.0",
+    "@iconify-json/vscode-icons": "^1.2.11",
+    "@nuxt/content": "^3.1.0",
+    "@nuxt/eslint": "^1.0.0",
+    "@unocss/eslint-config": "^65.4.3",
+    "@unocss/nuxt": "^65.4.3",
+    "@vida0905/eslint-config": "^2.0.1",
+    "@vueuse/nuxt": "^12.5.0",
+    "eslint": "^9.19.0",
     "eslint-plugin-format": "^1.0.1",
-    "lint-staged": "^15.4.1",
-    "nuxt": "^3.15.2",
+    "lint-staged": "^15.4.3",
+    "nuxt": "^3.15.4",
     "sass-embedded": "^1.83.4",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.7.3",
-    "unocss": "^65.4.2",
+    "unocss": "^65.4.3",
     "vue-tsc": "^2.2.0"
   },
   "simple-git-hooks": {
