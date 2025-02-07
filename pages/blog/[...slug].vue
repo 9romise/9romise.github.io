@@ -4,6 +4,12 @@ import dayjs from 'dayjs'
 
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => queryCollection('blog').path(route.path).first())
+
+// https://content.nuxt.com/docs/getting-started/installation#display-your-page
+useSeoMeta({
+  title: page.value?.title,
+  description: page.value?.description,
+})
 </script>
 
 <template>
