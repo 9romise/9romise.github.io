@@ -16,7 +16,8 @@
     "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit",
     "prepare": "nuxi prepare && npx simple-git-hooks",
-    "prepack": "pnpm build"
+    "prepack": "nuxt build --preset github_pages",
+    "preview": "nuxt preview"
   },
   "dependencies": {
     "dayjs": "^1.11.13",
