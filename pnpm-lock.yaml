@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      dayjs:
-        specifier: ^1.11.13
-        version: 1.11.13
       shiki:
         specifier: ^3.3.0
         version: 3.3.0
@@ -2672,9 +2669,6 @@ packages:
   data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
-
-  dayjs@1.11.13:
-    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
   db0@0.3.2:
     resolution: {integrity: sha512-xzWNQ6jk/+NtdfLyXEipbX55dmDSeteLFt/ayF+wZUU5bzKgmrDOxmInUTbyVRp46YwnJdkDA1KhB7WIXFofJw==}
@@ -9415,8 +9409,6 @@ snapshots:
   csstype@3.1.3: {}
 
   data-uri-to-buffer@4.0.1: {}
-
-  dayjs@1.11.13: {}
 
   db0@0.3.2(@libsql/client@0.14.0)(better-sqlite3@11.9.1):
     optionalDependencies:

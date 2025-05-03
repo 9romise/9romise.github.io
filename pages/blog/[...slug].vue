@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ContentRenderer } from '#components'
-import dayjs from 'dayjs'
 
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => queryCollection('blog').path(route.path).first())
@@ -20,7 +19,13 @@ useSeoMeta({
           {{ page.title }}
         </h1>
         <p class="mt--6 text-gray-500 dark:c-gray-400">
-          {{ `${dayjs(page.date).format('MMM DD, YYYY ddd')}.` }}
+          <NuxtTime
+            :datetime="page.date"
+            year="numeric"
+            month="2-digit"
+            day="2-digit"
+            time-zone-name="short"
+          />
         </p>
         <ContentRenderer class="text-gray-600 dark:c-gray-300" :value="page" />
       </template>
