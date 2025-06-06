@@ -20,5 +20,5 @@ const generate = computed(() => id && ((typeof headings?.anchorLinks === 'boolea
   </component>
 </template>
 
-<style lang="scss">
+<style>
 </style>

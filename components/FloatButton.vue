@@ -30,7 +30,7 @@ useEventListener('scroll', () => {
   </Transition>
 </template>
 
-<style lang="scss">
+<style>
 .fade-in-enter-active,
 .fade-in-leave-active {
   transition: opacity 0.3s ease;

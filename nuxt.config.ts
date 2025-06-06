@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/content',
   ],
-  css: ['@unocss/reset/tailwind.css', '~/assets/css/main.scss'],
+  css: ['@unocss/reset/tailwind.css', '~/assets/css/main.css'],
   content: {
     build: {
       markdown: {
