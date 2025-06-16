@@ -1,20 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  future: {
-    compatibilityVersion: 4,
-  },
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@nuxt/content',
+  ],
+  devtools: { enabled: true },
   app: {
     head: {
       titleTemplate: '%s | Vida Xie',
     },
   },
-  devtools: { enabled: true },
-  modules: [
-    '@vueuse/nuxt',
-    '@unocss/nuxt',
-    '@nuxt/eslint',
-    '@nuxt/content',
-  ],
   css: ['@unocss/reset/tailwind.css', '~/assets/css/main.css'],
   content: {
     build: {
@@ -28,10 +24,8 @@ export default defineNuxtConfig({
       },
     },
   },
-  eslint: {
-    config: {
-      standalone: false,
-    },
+  future: {
+    compatibilityVersion: 4,
   },
   compatibilityDate: '2024-07-07',
 })
