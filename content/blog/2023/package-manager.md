@@ -298,9 +298,9 @@ npm install nrm -g
 
 ### 使用
 
-`nrm ls`查看可选的源，带`*`的是当前使用的源。
-更多具体的使用说明可查看其npm仓库。
-**注**：最新版本的nrm有bug，会不显示`*`，可在`node_global/node_modules/nrm/cli.js`中修改以下代码：
+`nrm ls`查看可选的源，带`*`的是当前使用的源。更多具体的使用说明可查看其npm仓库。
+
+~~**注**：最新版本的nrm有bug，会不显示`*`，可在`node_global/node_modules/nrm/cli.js`中修改以下代码：~~
 
 ```javascript
 function onList() {
