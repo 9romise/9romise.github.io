@@ -18,7 +18,7 @@ useSeoMeta({
         <h1 class="mb-4 mt-0 text-10 text-gray-900 dark:text-gray-100">
           {{ page.title }}
         </h1>
-        <p class="mt--6 text-gray-500 dark:c-gray-400">
+        <p class="mt--6 color-secondary">
           <NuxtTime
             :datetime="page.date"
             year="numeric"
@@ -27,10 +27,10 @@ useSeoMeta({
             time-zone-name="short"
           />
         </p>
-        <ContentRenderer class="text-gray-600 dark:c-gray-300" :value="page" />
+        <ContentRenderer class="color-content" :value="page" />
       </template>
       <template v-else>
-        <p class="text-gray-500 dark:c-gray-400">
+        <p class="color-secondary">
           Loading...
         </p>
       </template>

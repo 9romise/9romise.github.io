@@ -5,7 +5,7 @@
       <div class="flex-1">
         <slot />
       </div>
-      <AppFooter class="mt-40 w-full dark:c-gray-500" />
+      <AppFooter class="mt-40 w-full color-secondary" />
     </main>
   </div>
 </template>

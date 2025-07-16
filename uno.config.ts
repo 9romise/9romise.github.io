@@ -17,7 +17,10 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    btn: 'px-4 py-1 rounded inline-block cursor-pointer disabled:cursor-default disabled:bg-gray-600 disabled:op-50',
+    'btn': 'px-4 py-1 rounded inline-block cursor-pointer disabled:cursor-default disabled:bg-gray-600 disabled:op-50',
+    'color-primary': 'color-gray-700 dark:color-gray-200',
+    'color-secondary': 'color-gray-500 dark:color-gray-400',
+    'color-content': 'color-gray-600 dark:color-gray-300',
   },
   presets: [
     presetUno(),

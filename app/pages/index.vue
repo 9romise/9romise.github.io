@@ -95,7 +95,7 @@ function codeClick(link: string | undefined) {
 <template>
   <div>
     <h2>Vida Xie</h2>
-    <div class="text-4 c-gray-500">
+    <div class="text-4 color-content">
       <p>Hey, I am Vida Xie, born in 1999, a front-end engineer from China.</p>
       <p>I have been working as a front-end developer for 3 years.</p>
       <p>

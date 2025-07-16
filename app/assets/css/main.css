@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  @apply: c-gray-700 dark:c-gray-400 transition font-medium;
+  @apply: color-primary transition font-medium;
 }
 
 body::before {
@@ -106,7 +106,7 @@ ul {
   list-style-type: initial;
   list-style-position: inside;
   li::marker {
-    @apply: text-gray-500 ml-1;
+    @apply: color-secondary ml-1;
   }
 }
 :not(pre) > code {
