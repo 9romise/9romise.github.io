@@ -12,7 +12,7 @@ const blogList = computed(() => {
   const data = navigation.value?.filter((item) => !item.draft) || []
   const result = new Map<string, BlogCollectionItem[]>()
   data.forEach((blog) => {
-    const year = blog.path.split('/')[2]
+    const year = blog.path.split('/')[2]!
     if (!result.has(year)) {
       result.set(year, [])
     }
