@@ -11,7 +11,7 @@
     "url": "git+https://github.com/9romise/9romise.github.io.git"
   },
   "scripts": {
-    "dev": "nuxi dev --host",
+    "dev": "nuxt dev --host",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck",
