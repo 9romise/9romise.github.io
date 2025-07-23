@@ -25,4 +25,9 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2024-07-07',
+  vite: {
+    define: {
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: true,
+    },
+  },
 })
