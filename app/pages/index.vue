@@ -108,7 +108,7 @@ function codeClick(link: string | undefined) {
         <code
           v-for="{ icon, name, link } in details"
           :key="name"
-          class="whitespace-nowrap"
+          class="mx-0.2em whitespace-nowrap rounded-1 bg-gray-100 px-0.2em py-0.1em dark:bg-gray-800"
           :class="[
             { 'cursor-pointer': link },
           ]"
