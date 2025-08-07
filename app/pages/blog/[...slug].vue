@@ -27,7 +27,10 @@ useSeoMeta({
             time-zone-name="short"
           />
         </p>
-        <ContentRenderer class="color-content" :value="page" />
+        <ContentRenderer
+          class="color-content"
+          :value="page"
+        />
       </template>
       <template v-else>
         <p class="color-secondary">

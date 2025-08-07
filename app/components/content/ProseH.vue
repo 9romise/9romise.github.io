@@ -10,7 +10,11 @@ const generate = computed(() => id && ((typeof headings?.anchorLinks === 'boolea
 </script>
 
 <template>
-  <component :is="tag" :id class="relative">
+  <component
+    :is="tag"
+    :id
+    class="relative"
+  >
     <a
       v-if="generate"
       class="absolute left--8 op-0 hover:op-50"

@@ -102,7 +102,10 @@ function codeClick(link: string | undefined) {
         Since 2024, I have been involved in the open-source community and have developed a deep appreciation for it. Although I am still in the exploratory phase, I am trying to contribute to popular projects and continually learning through this experience.
       </p>
     </div>
-    <div v-for="{ title, details } in info" :key="title">
+    <div
+      v-for="{ title, details } in info"
+      :key="title"
+    >
       <h3>{{ title }}</h3>
       <p>
         <code
@@ -114,7 +117,14 @@ function codeClick(link: string | undefined) {
           ]"
           @click="codeClick(link)"
         >
-          <i v-if="icon" class="mr-1" :class="icon" />{{ name }}<i v-if="link" class="i-ri:arrow-right-up-line ml-0.5 size-1em" />
+          <i
+            v-if="icon"
+            class="mr-1"
+            :class="icon"
+          />{{ name }}<i
+            v-if="link"
+            class="i-ri:arrow-right-up-line ml-0.5 size-1em"
+          />
         </code>
       </p>
     </div>

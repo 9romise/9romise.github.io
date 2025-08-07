@@ -26,7 +26,10 @@ function backTop() {
 <template>
   <header class="w-full px-8">
     <nav class="h-14 flex items-end justify-between lh-none sm:h-17">
-      <NuxtLink class="text-10 c-gray-700 dark:c-gray-300" to="/">
+      <NuxtLink
+        class="text-10 c-gray-700 dark:c-gray-300"
+        to="/"
+      >
         <Logo animate />
       </NuxtLink>
       <div class="flex items-center gap-3 text-4 md:gap-5">
@@ -40,11 +43,20 @@ function backTop() {
         >
           {{ title }}
         </NuxtLink>
-        <a v-for="{ title, href, icon } in SOCIAL_LINKS" :key="title" :title :href target="_blank">
+        <a
+          v-for="{ title, href, icon } in SOCIAL_LINKS"
+          :key="title"
+          :title
+          :href
+          target="_blank"
+        >
           <span :class="icon" />
         </a>
         <button title="Toggle Color Theme">
-          <span class="i-ri-sun-line dark:i-ri-moon-line" @click="toggleDark" />
+          <span
+            class="i-ri-sun-line dark:i-ri-moon-line"
+            @click="toggleDark"
+          />
         </button>
       </div>
     </nav>
