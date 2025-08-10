@@ -11,9 +11,9 @@ interface FlickeringGridProps {
 }
 
 const props = withDefaults(defineProps<FlickeringGridProps>(), {
-  squareSize: 3,
+  squareSize: 4,
   gridGap: 6,
-  flickerChance: 0.5,
+  flickerChance: 0.3,
   color: '#000',
   maxOpacity: 0.3,
 })

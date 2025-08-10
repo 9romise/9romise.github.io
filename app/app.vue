@@ -6,7 +6,7 @@ const isDark = useDark()
   <FlickeringGrid
     class="fixed inset-0 z--1"
     :color="isDark ? '#acd3df' : '#58a7c0'"
-    :max-opacity="0.2"
+    :max-opacity="0.3"
   />
   <NuxtLayout>
     <NuxtPage />

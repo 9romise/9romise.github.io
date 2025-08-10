@@ -23,6 +23,3 @@ const generate = computed(() => id && ((typeof headings?.anchorLinks === 'boolea
     <slot />
   </component>
 </template>
-
-<style>
-</style>

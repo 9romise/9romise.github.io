@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="min-h-100vh flex flex-col">
     <AppHeader />
     <main class="mx-auto my-10 max-w-205 w-85% flex flex-1 flex-col lg:w-60% md:w-65%">
       <div class="flex-1">
@@ -9,11 +9,3 @@
     </main>
   </div>
 </template>
-
-<style>
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-</style>
