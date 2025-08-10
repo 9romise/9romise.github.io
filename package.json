@@ -11,34 +11,36 @@
     "url": "git+https://github.com/9romise/9romise.github.io.git"
   },
   "scripts": {
-    "dev": "nuxt dev --host",
+    "dev": "vite dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "nuxt typecheck",
-    "prepare": "nuxi prepare",
-    "prepack": "nuxt build --preset github_pages",
-    "preview": "nuxt preview"
+    "typecheck": "vue-tsc --noEmit",
+    "prepack": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "better-sqlite3": "^12.2.0",
+    "@vueuse/core": "^13.6.0",
     "shiki": "^3.9.2"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.2.5",
-    "@iconify-json/vscode-icons": "^1.2.24",
-    "@nuxt/content": "^3.6.3",
-    "@nuxt/eslint-plugin": "^1.8.0",
-    "@unocss/eslint-config": "^66.4.1",
-    "@unocss/nuxt": "^66.4.1",
+    "@iconify-json/vscode-icons": "^1.2.25",
+    "@shikijs/markdown-it": "^3.9.2",
+    "@unocss/eslint-config": "^66.4.2",
     "@vida0905/eslint-config": "^2.5.3",
-    "@vueuse/nuxt": "^13.6.0",
-    "eslint": "^9.32.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "eslint": "^9.33.0",
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
+    "markdown-it": "^14.1.0",
+    "markdown-it-magic-link": "^0.1.4",
     "nano-staged": "^0.8.0",
-    "nuxt": "^4.0.3",
     "typescript": "^5.9.2",
-    "unocss": "^66.4.1",
+    "unocss": "^66.4.2",
+    "unplugin-auto-import": "^20.0.0",
+    "unplugin-vue-components": "^29.0.0",
+    "unplugin-vue-markdown": "^29.1.0",
+    "vite": "^7.1.1",
     "vue-tsc": "^3.0.5"
   },
   "nano-staged": {
