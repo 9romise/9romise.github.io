@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <footer>
-    <div>
+  <footer class="flex justify-center">
+    <div class="mb-2rem">
       <a
         class="underline"
         href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -13,9 +13,3 @@
     </div>
   </footer>
 </template>
-
-<style scoped>
-footer > div {
-  margin-bottom: 2rem;
-}
-</style>
