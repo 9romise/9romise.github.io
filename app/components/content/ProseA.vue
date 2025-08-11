@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { NuxtLinkProps } from '#app'
 
-const { href = '', target } = defineProps<
+const { href = '', target = '_blank' } = defineProps<
   Pick<NuxtLinkProps, 'href' | 'target'>
 >()
 </script>
