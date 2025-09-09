@@ -1,7 +1,7 @@
 {
   "name": "9romise.github.io",
   "type": "module",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.1",
   "description": "",
   "author": "Vida Xie<https://github.com/9romise>",
   "license": "MIT",
@@ -21,25 +21,25 @@
   },
   "dependencies": {
     "better-sqlite3": "^12.2.0",
-    "shiki": "^3.9.2"
+    "shiki": "^3.12.2"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.2.5",
-    "@iconify-json/vscode-icons": "^1.2.24",
+    "@iconify-json/vscode-icons": "^1.2.30",
     "@nuxt/content": "^3.6.3",
-    "@nuxt/eslint-plugin": "^1.8.0",
-    "@unocss/eslint-config": "^66.4.1",
-    "@unocss/nuxt": "^66.4.1",
-    "@vida0905/eslint-config": "^2.5.3",
-    "@vueuse/nuxt": "^13.6.0",
-    "eslint": "^9.32.0",
+    "@nuxt/eslint-plugin": "^1.9.0",
+    "@unocss/eslint-config": "^66.5.1",
+    "@unocss/nuxt": "^66.5.1",
+    "@vida0905/eslint-config": "^2.6.0",
+    "@vueuse/nuxt": "^13.9.0",
+    "eslint": "^9.35.0",
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
-    "nuxt": "^4.0.3",
+    "nuxt": "^4.1.1",
     "typescript": "^5.9.2",
-    "unocss": "^66.4.1",
-    "vue-tsc": "^3.0.5"
+    "unocss": "^66.5.1",
+    "vue-tsc": "^3.0.6"
   },
   "nano-staged": {
     "*": "eslint --fix"

@@ -11,7 +11,7 @@ date: 2025-07-25
 
 在[Usage](https://ui.nuxt.com/composables/use-overlay#usage)介绍了基础的使用方法：
 
-``` vue
+```vue
 <script setup lang="ts">
 import { LazyModalExample } from '#components'
 
@@ -27,7 +27,7 @@ async function openModal() {
 
 所以我从[`create`](https://github.com/nuxt/ui/blob/v3/src/runtime/composables/useOverlay.ts#L64)方法开始：
 
-``` ts
+```ts
 const overlays = shallowReactive<Overlay[]>([])
 
 const create = <T extends Component>(component: T, _options?: OverlayOptions<ComponentProps<T>>): OverlayInstance<T> => {
@@ -58,7 +58,7 @@ const create = <T extends Component>(component: T, _options?: OverlayOptions<Com
 
 那么再看[`open`](https://github.com/nuxt/ui/blob/v3/src/runtime/composables/useOverlay.ts#L87)方法：
 
-``` ts
+```ts
 const open = <T extends Component>(id: symbol, props?: ComponentProps<T>): OpenedOverlay<T> => {
   const overlay = getOverlay(id)
 
@@ -86,7 +86,7 @@ const open = <T extends Component>(id: symbol, props?: ComponentProps<T>): Opene
 
 在[`getOverlay`](https://github.com/nuxt/ui/blob/v3/src/runtime/composables/useOverlay.ts#L142)中也仅仅是通过`id`找到了对应的`Overlay`：
 
-``` ts
+```ts
 const getOverlay = (id: symbol): Overlay => {
   const overlay = overlays.find(overlay => overlay.id === id)
 
@@ -143,7 +143,7 @@ const onClose = (id: symbol, value: any) => {
 
 抛开所有无关的逻辑，实际与显示相关的代码是以下这些：
 
-``` vue
+```vue
 const rootProps = useForwardPropsEmits(reactivePick(props, 'open', 'defaultOpen', 'modal'), emits)
 
 <template>
@@ -154,7 +154,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'open', 'defaultOpen'
 ```
 
 根结点的[`DialogRoot`](https://github.com/unovue/reka-ui/blob/v2/packages/core/src/Dialog/DialogRoot.vue)来自[`reka-ui`](https://reka-ui.com)，实际只是将`open`属性`provide`了出去：
-``` vue
+
+```vue
 <script setup lang="ts">
 provideDialogRootContext({
   open,
@@ -209,5 +210,6 @@ export default defineComponent({
 另外，在探索的过程中可以发现，Nuxt UI的类型声明也非常优秀，值得学习，但在此不再过多赘述。
 
 ## Credits
+
 - [Nuxt UI](https://ui.nuxt.com) - [MIT License](https://github.com/nuxt/ui?tab=MIT-1-ov-file#readme)
 - [Reka UI](https://reka-ui.com) - [MIT License](https://github.com/unovue/reka-ui?tab=MIT-1-ov-file#readme)
