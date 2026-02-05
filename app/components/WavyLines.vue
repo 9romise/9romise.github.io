@@ -47,8 +47,8 @@ function setLines() {
   const newLines: Point[][] = []
   const newPaths: SVGPathElement[] = []
 
-  const xGap = 10
-  const yGap = 32
+  const xGap = 28
+  const yGap = 16
 
   const oWidth = width.value + 200
   const oHeight = height.value + 30
@@ -120,32 +120,32 @@ function movePoints(time: number) {
   lines.value.forEach((points) => {
     points.forEach((p) => {
       const move = noise2D(
-        (p.x + time * 0.0125) * 0.002,
-        (p.y + time * 0.005) * 0.0015,
-      ) * 12
-      p.wave.x = Math.cos(move) * 32
-      p.wave.y = Math.sin(move) * 16
+        (p.x + time * 0.008) * 0.0015,
+        (p.y + time * 0.003) * 0.001,
+      ) * 8
+      p.wave.x = Math.cos(move) * 20
+      p.wave.y = Math.sin(move) * 10
 
       const dx = p.x - mouse.sx
       const dy = p.y - mouse.sy
       const d = Math.hypot(dx, dy)
-      const l = Math.max(175, mouse.vs)
+      const l = Math.max(200, mouse.vs)
 
       if (d < l) {
         const s = 1 - d / l
         const f = Math.cos(d * 0.001) * s
-        p.cursor.vx += Math.cos(mouse.a) * f * l * mouse.vs * 0.00065
-        p.cursor.vy += Math.sin(mouse.a) * f * l * mouse.vs * 0.00065
+        p.cursor.vx += Math.cos(mouse.a) * f * l * mouse.vs * 0.0004
+        p.cursor.vy += Math.sin(mouse.a) * f * l * mouse.vs * 0.0004
       }
 
-      p.cursor.vx += (0 - p.cursor.x) * 0.005
-      p.cursor.vy += (0 - p.cursor.y) * 0.005
-      p.cursor.vx *= 0.925
-      p.cursor.vy *= 0.925
-      p.cursor.x += p.cursor.vx * 2
-      p.cursor.y += p.cursor.vy * 2
-      p.cursor.x = Math.min(100, Math.max(-100, p.cursor.x))
-      p.cursor.y = Math.min(100, Math.max(-100, p.cursor.y))
+      p.cursor.vx += (0 - p.cursor.x) * 0.003
+      p.cursor.vy += (0 - p.cursor.y) * 0.003
+      p.cursor.vx *= 0.96
+      p.cursor.vy *= 0.96
+      p.cursor.x += p.cursor.vx * 1.5
+      p.cursor.y += p.cursor.vy * 1.5
+      p.cursor.x = Math.min(60, Math.max(-60, p.cursor.x))
+      p.cursor.y = Math.min(60, Math.max(-60, p.cursor.y))
     })
   })
 }
@@ -160,17 +160,29 @@ function moved(point: Point, withCursorForce = true) {
 function drawLines() {
   lines.value.forEach((points, lIndex) => {
     const firstPoint = points[0]
-    if (!firstPoint)
+    if (!firstPoint || points.length < 2)
       return
 
-    let p1 = moved(firstPoint, false)
-    let d = `M ${p1.x} ${p1.y}`
+    const p0 = moved(firstPoint, false)
+    let d = `M ${p0.x} ${p0.y}`
 
-    points.forEach((point, pIndex) => {
-      const isLast = pIndex === points.length - 1
-      p1 = moved(point, !isLast)
-      d += `L ${p1.x} ${p1.y}`
-    })
+    for (let i = 0; i < points.length - 1; i++) {
+      const current = points[i]!
+      const next = points[i + 1]!
+      const isLastSegment = i === points.length - 2
+
+      const p1 = moved(current, true)
+      const p2 = moved(next, !isLastSegment)
+
+      const midX = (p1.x + p2.x) / 2
+      const midY = (p1.y + p2.y) / 2
+
+      d += ` Q ${p1.x} ${p1.y} ${midX} ${midY}`
+    }
+
+    const lastPoint = points[points.length - 1]!
+    const pLast = moved(lastPoint, false)
+    d += ` L ${pLast.x} ${pLast.y}`
 
     paths.value[lIndex]?.setAttribute('d', d)
   })
@@ -191,11 +203,6 @@ useRafFn(({ timestamp }) => {
   mouse.ly = mouse.y
   mouse.a = Math.atan2(dy, dx)
 
-  if (containerRef.value) {
-    containerRef.value.style.setProperty('--x', `${mouse.sx}px`)
-    containerRef.value.style.setProperty('--y', `${mouse.sy}px`)
-  }
-
   movePoints(timestamp)
   drawLines()
 })
@@ -215,9 +222,6 @@ useRafFn(({ timestamp }) => {
 
 <style scoped>
 .wavy-lines {
-  --x: -0.5rem;
-  --y: 50%;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -227,19 +231,6 @@ useRafFn(({ timestamp }) => {
   height: 100%;
   overflow: hidden;
 
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0.5rem;
-    height: 0.5rem;
-    background: #160000;
-    border-radius: 50%;
-    transform: translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0);
-    will-change: transform;
-    content: '';
-  }
-
   svg {
     display: block;
     width: 100%;
@@ -248,8 +239,10 @@ useRafFn(({ timestamp }) => {
 
   :deep(path) {
     fill: none;
-    stroke: #160000;
-    stroke-width: 1px;
+    stroke: rgba(22, 0, 0, 0.1);
+    stroke-width: 0.75px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 }
 </style>
