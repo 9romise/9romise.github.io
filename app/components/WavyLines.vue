@@ -8,15 +8,16 @@ interface Point {
   cursor: { x: number, y: number, vx: number, vy: number }
 }
 
-const containerRef = useTemplateRef<HTMLElement>('containerRef')
-const svgRef = useTemplateRef<SVGSVGElement>('svgRef')
+const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef')
 
-const bounding = useElementBounding(containerRef)
+const bounding = useElementBounding(canvasRef)
 const { x: mouseX, y: mouseY } = useMouse({ type: 'page' })
 const { y: scrollY } = useWindowScroll()
+const colorMode = useColorMode()
 
 const lines = shallowRef<Point[][]>([])
-const paths = shallowRef<SVGPathElement[]>([])
+let ctx: CanvasRenderingContext2D | null = null
+let dpr = 1
 
 const mouse = {
   x: -10,
@@ -33,19 +34,31 @@ const mouse = {
 
 const noise2D = createNoise2D()
 
-function setLines() {
-  const { width, height } = bounding
-  const svg = svgRef.value
-  if (!svg || !width.value || !height.value)
+function setupCanvas() {
+  const canvas = canvasRef.value
+  if (!canvas || !bounding.width.value || !bounding.height.value)
     return
 
-  svg.style.width = `${width.value}px`
-  svg.style.height = `${height.value}px`
+  dpr = window.devicePixelRatio || 1
+  canvas.width = bounding.width.value * dpr
+  canvas.height = bounding.height.value * dpr
+  canvas.style.width = `${bounding.width.value}px`
+  canvas.style.height = `${bounding.height.value}px`
 
-  paths.value.forEach((path) => path.remove())
+  ctx = canvas.getContext('2d')
+  if (ctx) {
+    ctx.scale(dpr, dpr)
+  }
+}
+
+function setLines() {
+  const { width, height } = bounding
+  if (!width.value || !height.value)
+    return
+
+  setupCanvas()
 
   const newLines: Point[][] = []
-  const newPaths: SVGPathElement[] = []
 
   const xGap = 28
   const yGap = 16
@@ -71,15 +84,10 @@ function setLines() {
       })
     }
 
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-    path.classList.add('a__line', 'js-line')
-    svg.appendChild(path)
-    newPaths.push(path)
     newLines.push(points)
   }
 
   lines.value = newLines
-  paths.value = newPaths
 }
 
 watch([() => bounding.width.value, () => bounding.height.value], () => {
@@ -99,7 +107,7 @@ watch([mouseX, mouseY], ([x, y]) => {
   }
 })
 
-useEventListener(containerRef, 'touchmove', (e: TouchEvent) => {
+useEventListener(canvasRef, 'touchmove', (e: TouchEvent) => {
   e.preventDefault()
   const touch = e.touches[0]
   if (touch) {
@@ -152,19 +160,32 @@ function movePoints(time: number) {
 
 function moved(point: Point, withCursorForce = true) {
   return {
-    x: Math.round((point.x + point.wave.x + (withCursorForce ? point.cursor.x : 0)) * 10) / 10,
-    y: Math.round((point.y + point.wave.y + (withCursorForce ? point.cursor.y : 0)) * 10) / 10,
+    x: point.x + point.wave.x + (withCursorForce ? point.cursor.x : 0),
+    y: point.y + point.wave.y + (withCursorForce ? point.cursor.y : 0),
   }
 }
 
 function drawLines() {
-  lines.value.forEach((points, lIndex) => {
+  if (!ctx || !bounding.width.value || !bounding.height.value)
+    return
+
+  ctx.clearRect(0, 0, bounding.width.value, bounding.height.value)
+
+  const isDark = colorMode.value === 'dark'
+  ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.12)'
+  ctx.lineWidth = 0.75
+  ctx.lineCap = 'round'
+  ctx.lineJoin = 'round'
+
+  lines.value.forEach((points) => {
     const firstPoint = points[0]
     if (!firstPoint || points.length < 2)
       return
 
+    ctx!.beginPath()
+
     const p0 = moved(firstPoint, false)
-    let d = `M ${p0.x} ${p0.y}`
+    ctx!.moveTo(p0.x, p0.y)
 
     for (let i = 0; i < points.length - 1; i++) {
       const current = points[i]!
@@ -177,14 +198,14 @@ function drawLines() {
       const midX = (p1.x + p2.x) / 2
       const midY = (p1.y + p2.y) / 2
 
-      d += ` Q ${p1.x} ${p1.y} ${midX} ${midY}`
+      ctx!.quadraticCurveTo(p1.x, p1.y, midX, midY)
     }
 
     const lastPoint = points[points.length - 1]!
     const pLast = moved(lastPoint, false)
-    d += ` L ${pLast.x} ${pLast.y}`
+    ctx!.lineTo(pLast.x, pLast.y)
 
-    paths.value[lIndex]?.setAttribute('d', d)
+    ctx!.stroke()
   })
 }
 
@@ -209,15 +230,10 @@ useRafFn(({ timestamp }) => {
 </script>
 
 <template>
-  <div
-    ref="containerRef"
+  <canvas
+    ref="canvasRef"
     class="wavy-lines"
-  >
-    <svg
-      ref="svgRef"
-      class="js-svg"
-    />
-  </div>
+  />
 </template>
 
 <style scoped>
@@ -225,28 +241,7 @@ useRafFn(({ timestamp }) => {
   position: absolute;
   top: 0;
   left: 0;
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  :deep(path) {
-    fill: none;
-    stroke: rgba(0, 0, 0, 0.12);
-    stroke-width: 0.75px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-}
-
-.dark .wavy-lines :deep(path) {
-  stroke: rgba(255, 255, 255, 0.12);
 }
 </style>
