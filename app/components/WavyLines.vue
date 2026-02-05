@@ -239,10 +239,14 @@ useRafFn(({ timestamp }) => {
 
   :deep(path) {
     fill: none;
-    stroke: rgba(22, 0, 0, 0.1);
+    stroke: rgba(0, 0, 0, 0.12);
     stroke-width: 0.75px;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+}
+
+.dark .wavy-lines :deep(path) {
+  stroke: rgba(255, 255, 255, 0.12);
 }
 </style>
