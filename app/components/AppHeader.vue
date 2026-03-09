@@ -27,12 +27,12 @@ function backTop() {
   <header class="w-full px-8">
     <nav class="h-14 flex items-end justify-between lh-none sm:h-17">
       <NuxtLink
-        class="text-10 c-gray-700 dark:c-gray-300"
+        class="text-4xl c-gray-700 dark:c-gray-300"
         to="/"
       >
         <Logo animate />
       </NuxtLink>
-      <div class="flex items-center gap-3 text-4 md:gap-5">
+      <div class="flex items-center gap-3 text-base md:gap-5">
         <NuxtLink
           v-for="({ title, to }) in navItems"
           :key="title"

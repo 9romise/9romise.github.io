@@ -1,19 +1,19 @@
 :root {
-  --c-bg: #fff;
+  --c-background: #fafaf8;
   --c-scrollbar: #eee;
   --c-scrollbar-thumb: #bbb;
-  --c-line: #05050520;
+  /* --c-line: #05050520; */
 }
 
 html {
   overflow-x: hidden;
   overflow-y: scroll;
-  background: var(--c-bg);
+  background: var(--c-background);
   &.dark {
-    --c-bg: #050505;
+    --c-background: #050505;
     --c-scrollbar: #111;
     --c-scrollbar-hover: #222;
-    --c-line: #ffffff20;
+    /* --c-line: #ffffff20; */
   }
 }
 
@@ -54,7 +54,7 @@ body {
 /* #endregion */
 
 * {
-  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+  scrollbar-color: var(--c-scrollbar) var(--c-background);
   scroll-behavior: smooth;
 }
 
@@ -64,7 +64,7 @@ body {
 }
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background: var(--c-bg);
+  background: var(--c-background);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--c-scrollbar-thumb);
@@ -75,16 +75,16 @@ a {
 }
 
 h1 {
-  @apply: text-8 mt-6 mb-3;
+  @apply: text-4xl mt-6 mb-3;
 }
 h2 {
-  @apply: text-7 mt-5 mb-2;
+  @apply: text-3xl mt-5 mb-2;
 }
 h3 {
-  @apply: text-6 mt-4 mb-1;
+  @apply: text-2xl mt-4 mb-1;
 }
 h4 {
-  @apply: text-5 mt-3 mb-1;
+  @apply: text-xl mt-3 mb-1;
 }
 h1,
 h2,

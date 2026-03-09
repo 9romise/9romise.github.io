@@ -15,7 +15,7 @@ useSeoMeta({
   <main>
     <article class="px-0 lg:px-20">
       <template v-if="page">
-        <h1 class="mb-4 mt-0 text-10 text-gray-900 dark:text-gray-100">
+        <h1 class="mb-4 mt-0 text-4xl text-gray-900 dark:text-gray-100">
           {{ page.title }}
         </h1>
         <p class="mt--6 color-secondary">

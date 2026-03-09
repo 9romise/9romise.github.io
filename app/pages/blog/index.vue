@@ -25,13 +25,12 @@ const blogList = computed(() => {
 </script>
 
 <template>
-  <main>
+  <main class="flex flex-col gap-10">
     <ul
       v-for="[title, children] in blogList"
       :key="title"
-      class="my-10 text-5"
     >
-      <p class="mb-1 c-gray-400 dark:c-gray-600">
+      <p class="mb-1 text-3xl c-gray-400 op-60 dark:c-gray-600">
         {{ `< ${title} />` }}
       </p>
       <ul>
@@ -40,7 +39,7 @@ const blogList = computed(() => {
           :key="link.path"
         >
           <NuxtLink
-            class="c-gray-800 op-80 dark:c-gray-300 hover:op-100"
+            class="text-xl c-gray-800 op-80 dark:c-gray-300 hover:op-100"
             :to="link.path"
           >
             {{ link.title }}
