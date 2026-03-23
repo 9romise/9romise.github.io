@@ -1,19 +1,22 @@
 :root {
   --c-background: #fafaf8;
-  --c-scrollbar: #eee;
-  --c-scrollbar-thumb: #bbb;
-  /* --c-line: #05050520; */
+  --c-scrollbar: #e5e5e5;
+  --c-scrollbar-thumb: #a3a3a3;
+  --c-text: #171717;
+  --c-text-secondary: #525252;
 }
 
 html {
   overflow-x: hidden;
   overflow-y: scroll;
   background: var(--c-background);
+  color: var(--c-text);
   &.dark {
     --c-background: #050505;
-    --c-scrollbar: #111;
-    --c-scrollbar-hover: #222;
-    /* --c-line: #ffffff20; */
+    --c-scrollbar: #171717;
+    --c-scrollbar-hover: #262626;
+    --c-text: #e5e5e5;
+    --c-text-secondary: #a3a3a3;
   }
 }
 
@@ -90,7 +93,7 @@ h1,
 h2,
 h3,
 h4 {
-  @apply: font-bold text-gray-700;
+  @apply: font-bold text-gray-900 dark:text-gray-100;
 }
 ol,
 ul {
@@ -98,14 +101,5 @@ ul {
   list-style-position: inside;
   li::marker {
     @apply: color-secondary ml-1;
-  }
-}
-
-.dark {
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply: text-gray-100;
   }
 }
