@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-// const isDark = useDark()
+const isDark = useDark()
 </script>
 
 <template>
-  <!-- <FlickeringGrid
+  <FlickeringGrid
     class="fixed inset-0 z--1"
-    :square-size="8"
-    :grid-gap="4"
-    :flicker-chance="0.0001"
-    :color="isDark ? '#acd3df' : '#58a7c0'"
-    :max-opacity="0.15"
-  /> -->
+    :square-size="4"
+    :grid-gap="2"
+    :flicker-chance="0.00005"
+    :color="isDark ? '#3d3d3d' : '#d4d4d4'"
+    :max-opacity="0.3"
+  />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
